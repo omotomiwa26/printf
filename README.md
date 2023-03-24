@@ -1,4 +1,4 @@
-# This repository contains the files on 0x11. C - printf  📁
+# This repository contains the files on 0x11. C - printf project  📁
 
 ## Tasks  📃
 
@@ -10,9 +10,9 @@
 
 
 ```
-___NOTE:___ `This is a group project`
+NOTE - This is a group project
 
-***Project Team:***
+Project Team:
 ```
 
 [Samuel Shielu](https://github.com/saminstein)
