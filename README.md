@@ -13,9 +13,9 @@ Returns: the number of characters printed (excluding the null byte used to end o
 write output to stdout, the standard output stream
 format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
 
-    c
-    s
-    %
+c
+s
+%
 
 You don’t have to reproduce the buffer handling of the C library printf function
 You don’t have to handle the flag characters
@@ -30,8 +30,8 @@ You don’t have to handle the length modifiers
 - Handle the following conversion specifiers:
 
 `
-    d
-    i
+d
+i
 You don’t have to handle the flag characters
 You don’t have to handle field width
 You don’t have to handle precision
@@ -51,14 +51,14 @@ b: the unsigned int argument is converted to binary
 - Handle the following conversion specifiers:
 
 `
-    u
-    o
-    x
-    X
-    You don’t have to handle the flag characters
-    You don’t have to handle field width
-    You don’t have to handle precision
-    You don’t have to handle the length modifiers
+u
+o
+x
+X
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
 `
 
 4. Nothing in fine print is ever good news
@@ -70,8 +70,8 @@ b: the unsigned int argument is converted to binary
 - Handle the following custom conversion specifier:
 
 `
-    S : prints the string.
-    Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+S : prints the string.
+Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
 `
 
 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
@@ -79,10 +79,10 @@ b: the unsigned int argument is converted to binary
 - Handle the following conversion specifier: p.
 
 `
-    You don’t have to handle the flag characters
-    You don’t have to handle field width
-    You don’t have to handle precision
-    You don’t have to handle the length modifiers
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
 `
 
 7. The big print gives and the small print takes away
@@ -90,17 +90,17 @@ b: the unsigned int argument is converted to binary
 - Handle the following flag characters for non-custom conversion specifiers:
 
 `
-    +
-    space
-    #
++
+space
+#
 `
 
 
 
 
-*NOTE - This is a group project*
+***NOTE - This is a group project***
 
-_Project Team: ® (™) © _
+___Project Team:___ ® (™) ©
 
 [Samuel Shielu](https://github.com/saminstein)
 
