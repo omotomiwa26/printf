@@ -99,3 +99,58 @@ int print_rot_13_string(va_list types, char buffer[],
 	}
 	return (cnt);
 }
+
+/****************** PRINT POINTER ******************/
+/**
+ * print_point - Function prints the value of a pointer variable
+ * @types: Lists of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed.
+ */
+
+int print_point(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	char ext_c = 0, pad = ' ';
+
+	/* len=2, for '0x' */
+	int index = BUFF_SIZE - 2, len = 2, pad_start = 1;
+	unsigned long num_ad;
+	char map_to[] = "0123456789abcdef";
+	void *addrs = va_arg(types, void *);
+
+	UNUSED(width);
+	UNUSED(size);
+
+	if (addrs == NULL)
+		return (write(1, "(nil)", 5));
+
+	buffer[BUFF_SIZE - 1] = '\0';
+	UNUSED(precision);
+
+	num_ad = (unsigned long)addrs;
+
+	while (num_ad > 0)
+	{
+		buffer[index--] = map_to[num_ad % 16];
+		num_ad /= 16;
+		len++;
+	}
+
+	if ((flags & F_ZERO) && !(flags & F_MINUS))
+		pad = '0';
+	if (flags & F_PLUS)
+		ext_c = '+', len++;
+	else if (flags & F_SPACE)
+		ext_c = ' ', len++;
+
+	index++;
+
+	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
+	return (write_pointer(buffer, index, len,
+		width, flags, pad, ext_c, pad_start));
+}
