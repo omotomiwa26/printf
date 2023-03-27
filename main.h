@@ -72,6 +72,9 @@ int print_rot_13_string(va_list types, char buffer[], int flags, int width, int 
 /* Funcion to print memory address */
 int print_point(va_list types, char buffer[], int flags, int width, int precision, int size);
 
+/* Function to print non printable characters */
+int print_non_printable_cha(va_list types, char buffer[], int flags, int width, int precision, int size);
+
 /* width handler */
 int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
 

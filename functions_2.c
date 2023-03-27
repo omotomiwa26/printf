@@ -154,3 +154,44 @@ int print_point(va_list types, char buffer[],
 	return (write_pointer(buffer, index, len,
 		width, flags, pad, ext_c, pad_start));
 }
+
+/************************* PRINT NON PRINTABLE *************************/
+/**
+ * print_non_printable_cha - Function prints ascii codes in hexa of non printable chars
+ * @types: Lists of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
+ */
+
+int print_non_printable_cha(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	int y = 0, offset = 0;
+	char *str = va_arg(types, char *);
+
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+
+	while (str[y] != '\0')
+	{
+		if (is_printable(str[y]))
+			buffer[y + offset] = str[y];
+		else
+			offset += append_hexa_code(str[y], buffer, y + offset);
+
+		y++;
+	}
+
+	buffer[y + offset] = '\0';
+
+	return (write(1, buffer, y + offset));
+}
