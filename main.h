@@ -78,6 +78,9 @@ int print_non_printable_cha(va_list types, char buffer[], int flags, int width, 
 /* width handler */
 int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
 
+/* Funciotns to handle other specifiers */
+int get_print_precision(const char *format, int *i, va_list list);
+
 
 /* utils */
 int is_printable(char c);
