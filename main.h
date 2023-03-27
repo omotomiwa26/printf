@@ -42,7 +42,7 @@ typedef struct fmt fmt_t;
 
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int, va_list list, char buffer[], int flags, int width, int precision, int size);
+int handle_print_args(const char *fmt, int, va_list list, char buffer[], int flags, int width, int precision, int size);
 
 
 /*************************************** FUNCTIONS ********************************************/
