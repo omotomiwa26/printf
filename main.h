@@ -45,14 +45,14 @@ int _printf(const char *format, ...);
 int handle_print(const char *fmt, int, va_list list, char buffer[], int flags, int width, int precision, int size);
 
 
-/* functions */
+/*************************************** FUNCTIONS ********************************************/
 
-/* functions to print char and strings */
+			/* Functions To Print Char And Strings */
 int print_char(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size);
 
-/* functions to print numbers */
+			/* Functions To Print Numbers */
 int print_int(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_unsigned(va_list types, char buffer[], int flags, int width, int precision, int size);
@@ -62,31 +62,37 @@ int print_hexa_upper(va_list types, char buffer[], int flags, int width, int pre
 int print_hexa(va_list types, char map_to[], char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
 
-
-
-/*Function to print string in reverse*/
-int print_rev(va_list types, char buffer[], int flags, int width, int precision, int size);
-
-/*Function to print a string in rot 13*/
-int print_rot_13_string(va_list types, char buffer[], int flags, int width, int precision, int size);
-
-/* Funcion to print memory address */
-int print_point(va_list types, char buffer[], int flags, int width, int precision, int size);
-
-/* Function to print non printable characters */
+				/* Function To Print Non Printable Characters */
 int print_non_printable_cha(va_list types, char buffer[], int flags, int width, int precision, int size);
 
-/* width handler */
-int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
+				/* Funcion To Print Memory Address */
+int print_point(va_list types, char buffer[], int flags, int width, int precision, int size);
 
-/* Funciotns to handle other specifiers */
+		/* Funciotns To Handle Other Specifiers */
 int get_print_precision(const char *format, int *i, va_list list);
 
 
-/* utils */
+
+
+
+
+			/* Function To Print String In Reverse */
+int print_rev(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+			/* Function To Print A String In Rot13 */
+int print_rot_13_string(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+					/* Width Handler */
+int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
+
+
+
+
+	/* Utils */
 int is_printable(char c);
 int append_hexa_code(char, char[], int);
 int is_digit(char c);
+
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
