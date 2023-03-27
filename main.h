@@ -55,3 +55,9 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
 int print_int(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[], int flags, int width, int precision, int size);
 int print_unsigned(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+
+
+
+/*Function to print string in reverse*/
+int print_rev(va_list types, char buffer[],int flags, int width, int precision, int size);
