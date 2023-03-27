@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_calc_width - function calculates the width for printing
+ * calc_width - function calculates the width for printing
  * @format: Formatted string in which to print the arguments.
  * @i: List of arguments to be printed.
  * @list: list of arguments.
@@ -9,7 +9,7 @@
  * Return: width.
  */
  
-int get_calc_width(const char *format, int *i, va_list list)
+int calc_width(const char *format, int *i, va_list list)
 {
 	int cur_z;
 	int width = 0;
