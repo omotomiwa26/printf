@@ -70,7 +70,7 @@ int print_point(va_list types, char buffer[], int flags, int width, int precisio
 
 		/* Funciotns To Handle Other Specifiers */
 int get_print_precision(const char *format, int *i, va_list list);
-
+int get_calc_width(const char *format, int *i, va_list list);
 
 
 
