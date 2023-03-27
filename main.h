@@ -60,4 +60,7 @@ int print_unsigned(va_list types, char buffer[], int flags, int width, int preci
 
 
 /*Function to print string in reverse*/
-int print_rev(va_list types, char buffer[],int flags, int width, int precision, int size);
+int print_rev(va_list types, char buffer[], int flags, int width, int precision, int size);
+
+/*Function to print a string in rot 13*/
+int print_rot_13_string(va_list types, char buffer[], int flags, int width, int precision, int size);
