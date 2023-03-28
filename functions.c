@@ -11,23 +11,15 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
+
 int print_char(va_list types, char buffer[],
-<<<<<<< HEAD
-	 int flags, int width, int precision, int size)
-=======
-		int flags, int width, int precision, int size)
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
+	       int flags, int width, int precision, int size)
 {
-	char c;
+  
+	char c = va_arg(types, int);
 
-<<<<<<< HEAD
-	return (print_char(c, buffer, flags, width, precision, size));
-=======
-	c = va_arg(types, int);
+	return (write_char(c, buffer, flags, width, precision, size));
 
-	return (handle_write_char(c, buffer,
-flags, width, precision, size));
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 }
 
 /** PRINT A STRING **/
@@ -41,14 +33,10 @@ flags, width, precision, size));
  * @size: Size specifier
  * Return: numbers of printed chars
  */
-<<<<<<< HEAD
 
 int print_string(va_list types, char buffer[],
 	 int flags, int width, int precision, int size)
-=======
-int print_string(va_list types, char buffer[],
-		int flags, int width, int precision, int size)
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
+  
 {
 	int length = 0, i;
 	char *str = va_arg(types, char *);
@@ -89,6 +77,7 @@ int print_string(va_list types, char buffer[],
 	}
 	return (write(1, str, length));
 }
+
 /** PRINT PERCENT SIGN **/
 /**
  * print_percent - Prints a percent sign
@@ -100,14 +89,10 @@ int print_string(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-<<<<<<< HEAD
 	
 int print_percent(va_list types, char buffer[],
-	 int flags, int width, int precision, int size)
-=======
-int print_percent(va_list types, char buffer[],
-		int flags, int width, int precision, int size)
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
+		  int flags, int width, int precision, int size)
+  
 {
 	UNUSED(types);
 	UNUSED(buffer);
@@ -117,6 +102,7 @@ int print_percent(va_list types, char buffer[],
 	UNUSED(size);
 	return (write(1, "%%", 1));
 }
+ 
 /** PRINT INTEGER **/
 /**
  * print_int - Print int
@@ -128,12 +114,10 @@ int print_percent(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
+ 
 int print_int(va_list types, char buffer[],
-<<<<<<< HEAD
-	 int flags, int width, int precision, int size)
-=======
-		int flags, int width, int precision, int size)
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
+	      int flags, int width, int precision, int size)
+
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
@@ -164,6 +148,7 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer,
 flags, width, precision, size));
 }
+ 
 /** PRINT BINARY **/
 /**
  * print_binary - Prints an unsigned number
@@ -175,12 +160,10 @@ flags, width, precision, size));
  * @size: Size specifier
  * Return: Numbers of char printed
  */
+ 
 int print_binary(va_list types, char buffer[],
-<<<<<<< HEAD
-	 int flags, int width, int precision, int size)
-=======
-		int flags, int width, int precision, int size)
->>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
+		 int flags, int width, int precision, int size)
+  
 {
 	unsigned int n, m, i, sum;
 	unsigned int a[32];

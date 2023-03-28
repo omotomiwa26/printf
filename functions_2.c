@@ -152,7 +152,7 @@ int print_point(va_list types, char buffer[],
 	index++;
 
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
-	return (write_pointer(buffer, index, len,
+	return (write_mem_addr(buffer, index, len,
 		width, flags, pad, ext_c, pad_start));
 }
 

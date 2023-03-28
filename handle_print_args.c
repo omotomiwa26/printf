@@ -13,8 +13,7 @@
  * Return: 1 or 2;
  */
 
-int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[],
-	int flags, int width, int precision, int size)
+int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[], int flags, int width, int precision, int size)
 {
 	int x, unknown_length = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
@@ -22,7 +21,7 @@ int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[],
 		{'i', print_int}, {'d', print_int}, {'b', print_binary},
 		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
 		{'X', print_hexa_upper}, {'p', print_point}, {'S', print_non_printable_cha},
-		{'r', print_rev}, {'R', print_rot13_string_string}, {'\0', NULL}
+		{'r', print_rev}, {'R', print_rot_13_string}, {'\0', NULL}
 	};
 	for (x = 0; fmt_types[x].fmt != '\0'; x++)
 		if (fmt[*ind] == fmt_types[x].fmt)

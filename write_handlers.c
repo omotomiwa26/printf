@@ -248,7 +248,7 @@ int write_mem_addr(char buffer[], int ind, int length,
 			buffer[--ind] = '0';
 			if (extra_c)
 				buffer[--ind] = extra_c;
-			return (write(1, &buffer[3], i - 3) + write(1, &buffer[ind], length));
+			return (write(1, &buffer[3], a - 3) + write(1, &buffer[ind], length));
 		}
 		/* extra char to left of padd */
 		else if (!(flags & F_MINUS) && padd == '0')
@@ -257,7 +257,7 @@ int write_mem_addr(char buffer[], int ind, int length,
 				buffer[--padd_start] = extra_c;
 			buffer[1] = '0';
 			buffer[2] = 'x';
-			return (write(1, &buffer[padd_start], i - padd_start) +
+			return (write(1, &buffer[padd_start], a - padd_start) +
 				write(1, &buffer[ind], length - (1 - padd_start) - 2));
 		}
 	}
