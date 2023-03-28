@@ -81,11 +81,12 @@ int print_rev(va_list types, char buffer[], int flags, int width, int precision,
 			/* Function To Print A String In Rot13 */
 int print_rot_13_string(va_list types, char buffer[], int flags, int width, int precision, int size);
 
-					/* Width Handler */
-int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size);
-
-
-
+					/* Write Handlers */
+int write_char(char c, char buffer[], int flags, int width, int precision, int size);
+int write_number(int is_positive, int ind, char buffer[], int flags, int width, int precision, int size);
+int write_numb(int ind, char bff[], int flags, int width, int precision, int length, char padd, char extra_c);
+int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start);
+int write_mem_addr(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size);
 
 	/* Utils */
 int is_printable(char c);
