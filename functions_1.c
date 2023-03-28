@@ -31,7 +31,7 @@ int print_unsigned(va_list types, char buffer[],
 		num /= 10;
 	}
 	i++;
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (print_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
 /** PRINT UNSIGNED NUMBER IN OCTAL **/

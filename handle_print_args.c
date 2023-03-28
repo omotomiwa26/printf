@@ -21,10 +21,10 @@ int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[],
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
 		{'i', print_int}, {'d', print_int}, {'b', print_binary},
 		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
-		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
-		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+		{'X', print_hexa_upper}, {'p', print_point}, {'S', print_non_printable_cha},
+		{'r', print_rev}, {'R', print_rot13_string_string}, {'\0', NULL}
 	};
-	for (x = 0; fmt_types[i].fmt != '\0'; x++)
+	for (x = 0; fmt_types[x].fmt != '\0'; x++)
 		if (fmt[*ind] == fmt_types[x].fmt)
 			return (fmt_types[x].fn(list, buffer, flags, width, precision, size));
 

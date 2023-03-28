@@ -12,14 +12,22 @@
  * Return: Number of chars printed
  */
 int print_char(va_list types, char buffer[],
+<<<<<<< HEAD
+	 int flags, int width, int precision, int size)
+=======
 		int flags, int width, int precision, int size)
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 {
 	char c;
 
+<<<<<<< HEAD
+	return (print_char(c, buffer, flags, width, precision, size));
+=======
 	c = va_arg(types, int);
 
 	return (handle_write_char(c, buffer,
 flags, width, precision, size));
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 }
 
 /** PRINT A STRING **/
@@ -33,8 +41,14 @@ flags, width, precision, size));
  * @size: Size specifier
  * Return: numbers of printed chars
  */
+<<<<<<< HEAD
+
+int print_string(va_list types, char buffer[],
+	 int flags, int width, int precision, int size)
+=======
 int print_string(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 {
 	int length = 0, i;
 	char *str = va_arg(types, char *);
@@ -86,8 +100,14 @@ int print_string(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
+<<<<<<< HEAD
+	
+int print_percent(va_list types, char buffer[],
+	 int flags, int width, int precision, int size)
+=======
 int print_percent(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 {
 	UNUSED(types);
 	UNUSED(buffer);
@@ -109,7 +129,11 @@ int print_percent(va_list types, char buffer[],
  * Return: Number of chars printed
  */
 int print_int(va_list types, char buffer[],
+<<<<<<< HEAD
+	 int flags, int width, int precision, int size)
+=======
 		int flags, int width, int precision, int size)
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
@@ -145,14 +169,18 @@ flags, width, precision, size));
  * print_binary - Prints an unsigned number
  * @types: List of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @flags: Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
  * Return: Numbers of char printed
  */
 int print_binary(va_list types, char buffer[],
+<<<<<<< HEAD
+	 int flags, int width, int precision, int size)
+=======
 		int flags, int width, int precision, int size)
+>>>>>>> 0d7caf9fc4e0035dfbf1445eb51823706801a375
 {
 	unsigned int n, m, i, sum;
 	unsigned int a[32];

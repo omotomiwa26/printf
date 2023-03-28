@@ -239,7 +239,7 @@ int write_mem_addr(char buffer[], int ind, int length,
 			buffer[--ind] = '0';
 			if (extra_c)
 				buffer[--ind] = extra_c;
-			return (write(1, &buffer[ind], length) + write(1, &buffer[3], i - 3));
+			return (write(1, &buffer[ind], length) + write(1, &buffer[3], a - 3));
 		}
 		/* extra char to left of buffer */
 		else if (!(flags & F_MINUS) && padd == ' ')
