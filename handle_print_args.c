@@ -13,7 +13,8 @@
  * Return: 1 or 2;
  */
 
-int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[], int flags, int width, int precision, int size)
+int handle_print_args(const char *fmt, int *ind, va_list list, char buffer[],
+		      int flags, int width, int precision, int size)
 {
 	int x, unknown_length = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
