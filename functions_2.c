@@ -17,7 +17,6 @@ int print_rev(va_list types, char buffer[],
 {
 	char *str;
 	int x, cnt = 0;
-	char a;
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -35,11 +34,9 @@ int print_rev(va_list types, char buffer[],
 	for (x = 0; str[x]; x++)
 		;
 
-x -= 1;
-while (x >= 0)
+for (x = x - 1; x >= 0; x--)
 {
-x--;
-		 a = str[x];
+char a = str[x];
 
 		write(1, &a, 1);
 		cnt++;
